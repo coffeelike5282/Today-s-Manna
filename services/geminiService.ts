@@ -5,7 +5,7 @@ import { MannaData } from '../types';
 // This is for demonstration within the secure sandbox environment.
 const API_KEY = process.env.API_KEY || '';
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
+const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
 
 const MANNA_SCHEMA = {
   type: Type.OBJECT,

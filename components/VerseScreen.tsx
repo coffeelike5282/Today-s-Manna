@@ -21,14 +21,20 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data }) => {
 
       {/* Header */}
       <div className="relative z-20 pt-16 px-6 flex flex-col items-center flex-shrink-0">
-        <div className="relative flex items-center justify-center w-full mb-8">
+        <div className="relative flex items-center justify-center w-full mb-2">
           <div className="absolute left-0 w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-md border-2 border-primary/20">
             <Croissant className="text-primary" size={24} />
           </div>
-          <h1 className="text-3xl font-normal text-gray-800 tracking-normal font-chunky pt-1">오늘의 만나</h1>
+          <h1 className="text-3xl font-normal text-manna-brown tracking-normal font-chunky pt-1">오늘의 만나</h1>
           <button className="absolute right-0 w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm border-2 border-gray-100 active:scale-90 transition-transform">
             <Volume2 className="text-gray-700" size={24} />
           </button>
+        </div>
+
+        <div className="px-3 py-1 bg-white/40 backdrop-blur-sm rounded-full mb-6 shadow-sm">
+          <p className="text-gray-500 font-chunky text-sm tracking-wide">
+            {new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
         </div>
 
         {/* Mascot Mini */}
@@ -53,18 +59,18 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data }) => {
               <span className="font-sans font-[900]">{data.verseRef}</span>
             </div>
           </div>
-          
+
           <div className="flex-1 w-full overflow-hidden flex flex-col items-center justify-start">
             <div className="custom-scrollbar overflow-y-auto w-full px-4 text-center font-verse text-[1.45rem] leading-[1.8] text-gray-700 font-medium tracking-normal keep-all">
               {data.verseText.split('\n').map((line, i) => {
-                 const isHighlight = line.includes("합력하여");
-                 return (
-                   <p key={i} className={`mb-2 ${isHighlight ? "text-primary-dark font-bold" : ""}`}>
-                     {line}
-                   </p>
-                 );
+                const isHighlight = line.includes("합력하여");
+                return (
+                  <p key={i} className={`mb-2 ${isHighlight ? "text-primary-dark font-bold" : ""}`}>
+                    {line}
+                  </p>
+                );
               })}
-              
+
               <p className="mb-2 text-gray-400 text-lg opacity-40 pt-4">—</p>
               <p className="mb-2 text-gray-500/80 text-xl">
                 {data.fullVerse}
@@ -80,7 +86,7 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data }) => {
           <div className="animate-bounce text-primary/80 h-8 flex items-center">
             <ChevronUp size={36} strokeWidth={3} />
           </div>
-          <button 
+          <button
             onClick={onNext}
             className="w-full h-18 py-5 bg-gradient-to-br from-[#FF9E80] to-[#FF5252] rounded-full flex items-center justify-center shadow-[0_12px_28px_-5px_rgba(255,82,82,0.5)] active:scale-[0.96] transition-all"
           >

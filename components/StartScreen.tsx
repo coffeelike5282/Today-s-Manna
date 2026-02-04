@@ -33,9 +33,15 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext }) => {
       </div>
 
       <div className="flex flex-col items-center z-20">
+        <h1 className="text-[40px] text-manna-brown font-chunky mb-2 drop-shadow-sm tracking-tight">오늘의 만나</h1>
+        <div className="px-4 py-1.5 bg-white/50 backdrop-blur-sm rounded-full mb-10 shadow-sm">
+          <p className="text-gray-600 font-chunky text-lg tracking-wide">
+            {new Date().toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric' })}
+          </p>
+        </div>
         <Mascot onClick={onNext} className="animate-bounce-gentle mb-12" />
-        
-        <h2 
+
+        <h2
           className="text-[28px] text-gray-700 font-chunky mb-4 tracking-tight drop-shadow-sm cursor-pointer animate-pulse"
           onClick={onNext}
         >
