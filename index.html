@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Today's Manna</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Nanum+Gothic:wght@400;700;800&family=Jua&family=Gowun+Dodum&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#A5D6A7",
+              secondary: "#D1C4E9",
+              accent: "#FFCC80",
+              "manna-yellow": "#FFE082",
+              "manna-brown": "#8D6E63",
+              "primary-dark": "#689F38",
+              "coral-pink-start": "#FF8A80",
+              "coral-pink-end": "#FF5252",
+              "mission-pink": "#FFF0F3",
+              "interpretation-mint": "#E0F2F1",
+            },
+            fontFamily: {
+              sans: ["Nanum Gothic", "sans-serif"],
+              chunky: ["Jua", "sans-serif"],
+              verse: ["Gowun Dodum", "sans-serif"],
+            },
+            animation: {
+              float: 'float 6s ease-in-out infinite',
+              'float-delayed': 'float 8s ease-in-out infinite 1.5s',
+              'bounce-gentle': 'bounce-gentle 3s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+                '50%': { transform: 'translateY(-15px) rotate(3deg)' },
+              },
+              'bounce-gentle': {
+                '0%, 100%': { transform: 'translateY(0px) scale(1)' },
+                '50%': { transform: 'translateY(-25px) scale(1.05)' },
+              }
+            }
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f3f4f6;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+      }
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+      .keep-all {
+        word-break: keep-all;
+        overflow-wrap: break-word;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(141, 110, 99, 0.2);
+        border-radius: 10px;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.39.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
