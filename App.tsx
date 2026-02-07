@@ -26,7 +26,9 @@ const App: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current = new Audio('/bgm.wav');
+    // Fix: Use BASE_URL to correctly locate bgm.wav on GitHub Pages subpath
+    const audioPath = import.meta.env.BASE_URL + 'bgm.wav';
+    audioRef.current = new Audio(audioPath);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
 
