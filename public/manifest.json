@@ -1,7 +1,7 @@
 {
     "name": "Today's Manna",
     "short_name": "Manna",
-    "start_url": "/",
+    "start_url": "/Today-s-Manna/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#A5D6A7",

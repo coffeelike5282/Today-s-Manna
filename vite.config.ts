@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
           theme_color: "#A5D6A7",
           background_color: "#ffffff",
           display: "standalone",
-          start_url: "/",
+          start_url: "/Today-s-Manna/",
           icons: [
             {
               src: "icon-192.png",
