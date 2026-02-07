@@ -1,0 +1,16 @@
+{
+    "name": "Today's Manna",
+    "short_name": "Manna",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#A5D6A7",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "icon-512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
