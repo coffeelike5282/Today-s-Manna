@@ -32,6 +32,16 @@ const App: React.FC = () => {
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
 
+    // Attempt to hide media controls in notification center
+    if ('mediaSession' in navigator) {
+      navigator.mediaSession.setActionHandler('play', null);
+      navigator.mediaSession.setActionHandler('pause', null);
+      navigator.mediaSession.setActionHandler('seekbackward', null);
+      navigator.mediaSession.setActionHandler('seekforward', null);
+      navigator.mediaSession.setActionHandler('previoustrack', null);
+      navigator.mediaSession.setActionHandler('nexttrack', null);
+    }
+
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
