@@ -3,15 +3,23 @@ import StartScreen from './components/StartScreen';
 import VerseScreen from './components/VerseScreen';
 import DetailScreen from './components/DetailScreen';
 import { INITIAL_DATA } from './constants';
-import { getLocalManna } from './services/localDataService';
+import { getDailyManna } from './services/mannaService';
 import { ScreenState, MannaData } from './types';
 import { fetchDailyManna } from './services/geminiService';
 import { RefreshCw, Volume2, VolumeX } from 'lucide-react';
 
 const App: React.FC = () => {
   const [screen, setScreen] = useState<ScreenState>(ScreenState.START);
-  const [mannaData, setMannaData] = useState<MannaData>(getLocalManna(new Date()) || INITIAL_DATA);
+  const [mannaData, setMannaData] = useState<MannaData>(INITIAL_DATA);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await getDailyManna();
+      if (data) setMannaData(data);
+    };
+    loadData();
+  }, []);
 
   // Audio State
   const [isMuted, setIsMuted] = useState(false);
