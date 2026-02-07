@@ -16,4 +16,6 @@ export interface ScreenProps {
   onNext: () => void;
   onBack?: () => void;
   data: MannaData;
+  isMuted?: boolean;
+  toggleMute?: () => void;
 }

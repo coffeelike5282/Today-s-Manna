@@ -1,8 +1,8 @@
 import React from 'react';
 import { ScreenProps } from '../types';
-import { Volume2, Cloud, Star, ChevronUp, Croissant } from 'lucide-react';
+import { Volume2, VolumeX, Cloud, Star, ChevronUp, Croissant } from 'lucide-react';
 
-const VerseScreen: React.FC<ScreenProps> = ({ onNext, data }) => {
+const VerseScreen: React.FC<ScreenProps> = ({ onNext, data, isMuted, toggleMute }) => {
   return (
     <div className="relative w-full h-full flex flex-col overflow-hidden">
       {/* Floating Background Elements */}
@@ -26,8 +26,18 @@ const VerseScreen: React.FC<ScreenProps> = ({ onNext, data }) => {
             <Croissant className="text-primary" size={24} />
           </div>
           <h1 className="text-3xl font-normal text-manna-brown tracking-normal font-chunky pt-1">오늘의 만나</h1>
-          <button className="absolute right-0 w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm border-2 border-gray-100 active:scale-90 transition-transform">
-            <Volume2 className="text-gray-700" size={24} />
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleMute?.();
+            }}
+            className="absolute right-0 w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-sm border-2 border-gray-100 active:scale-90 transition-transform"
+          >
+            {isMuted ? (
+              <VolumeX className="text-gray-500" size={24} />
+            ) : (
+              <Volume2 className="text-gray-700" size={24} />
+            )}
           </button>
         </div>
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { ScreenProps } from '../types';
 import Mascot from './Mascot';
-import { Volume2, Cloud, Star, Heart } from 'lucide-react';
+import { Volume2, VolumeX, Cloud, Star, Heart } from 'lucide-react';
 
-const StartScreen: React.FC<ScreenProps> = ({ onNext }) => {
+const StartScreen: React.FC<ScreenProps> = ({ onNext, isMuted, toggleMute }) => {
   return (
     <div className="relative w-full h-full flex flex-col items-center justify-center overflow-hidden">
       {/* Background Floating Elements */}
@@ -27,8 +27,18 @@ const StartScreen: React.FC<ScreenProps> = ({ onNext }) => {
       </div>
 
       <div className="absolute top-16 right-8 z-50">
-        <button className="w-12 h-12 glass-effect rounded-2xl flex items-center justify-center shadow-sm active:scale-90 transition-transform">
-          <Volume2 className="text-gray-600" size={24} />
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            toggleMute?.();
+          }}
+          className="w-12 h-12 glass-effect rounded-2xl flex items-center justify-center shadow-sm active:scale-90 transition-transform"
+        >
+          {isMuted ? (
+            <VolumeX className="text-gray-500" size={24} />
+          ) : (
+            <Volume2 className="text-primary-dark" size={24} />
+          )}
         </button>
       </div>
 
