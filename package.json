@@ -1,5 +1,6 @@
 {
-  "name": "today's-manna",
+  "name": "todays-manna",
+  "description": "Today's Manna - Daily Spiritual Food",
   "private": true,
   "version": "0.0.0",
   "type": "module",
