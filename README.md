@@ -4,6 +4,8 @@
 
 # Run and deploy your AI Studio app
 
+이것은 웹앱버전 초기모델
+
 This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/drive/1LWE89aEI-P330MSqD1ZkHl-tDbJ4hBMZ
